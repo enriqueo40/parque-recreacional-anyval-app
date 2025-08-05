@@ -9,6 +9,7 @@ const buildOptions = {
   outfile: 'dist/bundle.js',
   loader: { '.tsx': 'tsx' },
   platform: 'browser',
+  format: 'esm',
   // Mark these packages as external to prevent esbuild from bundling them.
   // They will be loaded by the browser via the importmap in index.html.
   external: [
