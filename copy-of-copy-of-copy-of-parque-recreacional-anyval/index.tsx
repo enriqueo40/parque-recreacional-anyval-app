@@ -17,17 +17,17 @@ const PostCategory = {
 };
 
 // --- START OF ICONS ---
-const PlusIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+const PlusIcon = (props: React.SVGProps<SVGSVGElement>) => (
   React.createElement('svg', { ...props, xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
     React.createElement('path', { d: "M12 4v16m8-8H4" })
   )
 );
-const HeartIcon = (props: { className?: string; isLiked?: boolean; }) => (
-  React.createElement('svg', { className: props.className, xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: props.isLiked ? "currentColor" : "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
+const HeartIcon = ({ isLiked, ...props }: React.SVGProps<SVGSVGElement> & { isLiked?: boolean }) => (
+  React.createElement('svg', { ...props, xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: isLiked ? "currentColor" : "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
     React.createElement('path', { d: "M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z" })
   )
 );
-const CommentIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+const CommentIcon = (props: React.SVGProps<SVGSVGElement>) => (
   React.createElement('svg', { ...props, xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
     React.createElement('path', { d: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" })
   )
@@ -48,7 +48,7 @@ const XCircleIcon = (props: React.SVGProps<SVGSVGElement>) => (
         React.createElement('path', { fillRule: "evenodd", d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.707 12.293a1 1 0 01-1.414 1.414L12 13.414l-2.293 2.293a1 1 0 01-1.414-1.414L10.586 12 8.293 9.707a1 1 0 011.414-1.414L12 10.586l2.293-2.293a1 1 0 011.414 1.414L13.414 12l2.293 2.293z", clipRule: "evenodd" })
     )
 );
-const LoginIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+const LoginIcon = (props: React.SVGProps<SVGSVGElement>) => (
   React.createElement('svg', { ...props, xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
     React.createElement('path', { d: "M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" })
   )

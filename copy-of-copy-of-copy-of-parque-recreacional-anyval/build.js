@@ -1,6 +1,6 @@
 
 const esbuild = require('esbuild');
-const { cp } = require('fs/promises');
+const { copyFile } = require('fs/promises');
 
 // esbuild configuration
 const buildOptions = {
@@ -28,7 +28,7 @@ async function build() {
     // Run the esbuild build process
     await esbuild.build(buildOptions);
     // Copy the main HTML file to the distribution folder
-    await cp('index.html', 'dist/index.html');
+    await copyFile('index.html', 'dist/index.html');
     console.log('✅ Build successful!');
   } catch (e) {
     console.error('❌ Build failed:', e);
