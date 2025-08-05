@@ -1,6 +1,6 @@
 
 const esbuild = require('esbuild');
-const { copyFile } = require('fs/promises');
+const { copyFile, mkdir } = require('fs/promises');
 
 // esbuild configuration
 const buildOptions = {
@@ -25,6 +25,8 @@ const buildOptions = {
 
 async function build() {
   try {
+    // Ensure the dist directory exists before building
+    await mkdir('dist', { recursive: true });
     // Run the esbuild build process
     await esbuild.build(buildOptions);
     // Copy the main HTML file to the distribution folder
